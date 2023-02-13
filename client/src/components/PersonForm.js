@@ -6,7 +6,7 @@ const PersonForm= () => {
     const [ lastName, setLastName ] = useState("");
 
 
-    const onSubmitHandler = (e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
         axios.post("http://localhost:8000/api/people", {
             firstName,
@@ -19,7 +19,7 @@ const PersonForm= () => {
             .catch(err=>console.log(err))
     }
         return (
-        <form onSubmit={onSubmitHandler}>
+        <form onSubmit={submitHandler}>
             <p>
                 <label>First Name</label>
                 <br/>
